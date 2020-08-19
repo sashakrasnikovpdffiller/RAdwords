@@ -90,7 +90,7 @@ transformData <- function(data,
 #   }
   Behavior = NULL
   #eliminate ',' thousend separater in data and convert values into numeric data
-  metricVar <- as.character(subset(reportType, Behavior == 'Metric' & Type != QualityScoreBucket)$Display.Name)
+  metricVar <- as.character(subset(reportType, Behavior == 'Metric' & Type != "QualityScoreBucket")$Display.Name)
   for(var in metricVar){
     if(var %in% colnames(data)){
       data[,var] <- as.character(data[,var])
